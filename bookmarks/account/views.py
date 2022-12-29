@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
-def user_login(request):
+def user_login(request): # Our own custom view
     if request.method == 'POST':
         form = LoginForm(request.POST)
         
