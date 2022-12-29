@@ -107,7 +107,7 @@ label {
     color:#333;
     margin-bottom:4px;
 }
-input, textarea {
+ input, textarea {
     clear:both;
     float:left;
     margin:0 0 10px;
@@ -116,7 +116,7 @@ input, textarea {
     padding:6px 10px;
     font-size:14px;
     outline: none;
-}
+} 
 input[type=submit], a.button {
     font-weight:bold;
     background:#12c064;

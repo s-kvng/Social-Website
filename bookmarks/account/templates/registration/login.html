@@ -20,6 +20,7 @@
 
 {% endif %}
 
+<div class="form-group">
 <div class="login-form">
 <form action="{% url 'login' %}"  method="post">
 
@@ -29,8 +30,9 @@
     <input type="hidden" name="next" value="{{ next }}">
     
     <p> <input type="submit" value="Log-in"> </p>
+    
 
 </form>
 </div>
-
+</div>
 {% endblock %}
