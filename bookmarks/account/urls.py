@@ -31,4 +31,7 @@ urlpatterns = [
     #dashboard url
     path('', views.dashboard, name='dashboard'),
     
+    #register url
+    path('register/', views.register, name='register'),
+    
 ]
