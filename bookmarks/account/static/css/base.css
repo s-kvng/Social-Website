@@ -117,6 +117,11 @@ label {
     font-size:14px;
     outline: none;
 } 
+
+.form-control{
+    width: 50% !important;
+}
+
 input[type=submit], a.button {
     font-weight:bold;
     background:#12c064;
