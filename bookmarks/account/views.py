@@ -12,8 +12,11 @@ def user_login(request): # Our own custom view
         
         if form.is_valid():
             cd = form.cleaned_data
+            
+            #check the datebase for an object with the same username and password
             user = authenticate(request, username=cd['username'],password=cd['password'])
             
+            #when a user object is found
             if user is not None:
                 if user.is_active:
                     login(request, user)
@@ -33,6 +36,7 @@ def dashboard(request):
     return render(request, 'account/dashboard.html', {'section': 'dashboard'})
 
 
+#custom registeration view 
 def register(request):
     
     if request.method == 'POST':
@@ -41,6 +45,7 @@ def register(request):
         if user_form.is_valid():
             #create a new user but avoid saving it yet
             new_user = user_form.save(commit=False)
+            print(new_user)
             
             #set the chosen password... set_password hashes the password so we dont store the raw one 
             new_user.set_password(user_form.cleaned_data['password'])

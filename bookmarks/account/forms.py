@@ -8,9 +8,9 @@ class LoginForm(forms.Form):
     
     
 class UserRegistrationForm(forms.ModelForm):
-    
-    password = forms.CharField(label='Password',widget = forms.PasswordInput(attrs={'class': 'form-control'}))
-    password2 = forms.CharField(label = 'Repeat Password', widget = forms.PasswordInput(attrs={'class': 'form-control'}))
+     
+    password = forms.CharField(label='Password',widget = forms.PasswordInput(attrs={'class': 'form-control mb-1'}))
+    password2 = forms.CharField(label = 'Repeat Password', widget = forms.PasswordInput(attrs={'class': 'form-control mb-1'}))
     
     class Meta:
         model = User
@@ -18,8 +18,8 @@ class UserRegistrationForm(forms.ModelForm):
         
         widgets = {
             'username' : forms.TextInput(attrs={'class': 'form-control'}),
-            'first_name' : forms.TextInput(attrs={'class': 'form-control'}),
-            'email' : forms.TextInput(attrs={'class': 'form-control'}),
+            'first_name' : forms.TextInput(attrs={'class': 'form-control mb-1'}),
+            'email' : forms.TextInput(attrs={'class': 'form-control mb-1'}),
                
         }
         
