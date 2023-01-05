@@ -59,7 +59,7 @@
                 <li class=" {{ message.tags }} ">
                     {{ message|safe}}
                 
-                    <a href="#" class="close">x</a>
+                    <a href="{% url "edit" %}" class="close">x</a>
                 </li>
 
             {% endfor %}
