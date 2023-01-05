@@ -140,3 +140,10 @@ EMAIL_HOST_USER = 'dproject8420@gmail.com'
 EMAIL_HOST_PASSWORD = 'nlfiliukxfhknnwt'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+
+
+#Authentication settings
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend', # Authenticate users using username and password (default)
+    'account.authentication.EmailAuthBackend', #Auth user using email and password (custom made)
+]
