@@ -26,6 +26,7 @@ class ImageCreateForm(forms.ModelForm):
         return url
     
     
+    #Overriding the save method
     def save(self, force_insert=False, force_update=False, commit = True):
         
         image = super().save(commit=False) # Save the image instance 
