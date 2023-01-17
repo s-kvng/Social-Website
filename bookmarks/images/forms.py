@@ -7,7 +7,7 @@ import requests
 #Create a new form
 
 class ImageCreateForm(forms.ModelForm):
-    class Meta :
+    class Meta:
         model = Image 
         fields = ['title', 'url', 'description']
         widgets = {
