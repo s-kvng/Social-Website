@@ -1,5 +1,5 @@
 const siteUrl  = "//127.0.0.1:8000/";
-const styleUrl = siteUrl + "static/css/bookmark.css";
+const styleUrl = siteUrl + "static/css/bookmarklet.css";
 const minHeight = 250;
 const minWidth = 250;
 
@@ -18,9 +18,9 @@ head.appendChild(link);
 var body = document.getElementsByTagName("body")[0];
 
 boxHtml = `
-        <div class="bookmarklet">
-        <a href="#" id="close">&times;</a>
-        <h1>Select an image to bookmark:</h1>
+        <div id="bookmarklet">
+        <a href="" id="close">&times;</a>
+        <h1 >Select an image to bookmarks:</h1>
         <div class="images" ></div>
         </div>
 `;
@@ -29,36 +29,49 @@ body.innerHTML += boxHtml;
 
 
 //Load function
-function bookmarkletLaunch (){
-    
-    var bookmarklet = document.getElementById('bookmark');
-    var imagesFound = bookmarklet.querySelector('.images');
+function bookmarkletLaunch() {
+  bookmarklet = document.getElementById('bookmarklet');
+  var imagesFound = bookmarklet.querySelector('.images');
 
-    //clear images found
-    imagesFound.innerHTML = '';
+  // clear images found
+  imagesFound.innerHTML = '';
+  // display bookmarklet
+  bookmarklet.style.display = 'block';
 
-    //display bookmark
-    bookmarklet.style.display = 'block';
-
-    //Close event
-    bookmarklet.querySelector('close').addEventListener('click', function(){
-        bookmarklet.style.display = 'none';
-    })
+  // close event
+  bookmarklet.querySelector('#close')
+             .addEventListener('click', function(){
+    bookmarklet.style.display = 'none'
+  });
 
 
     //Find images
-    var images = document.querySelectorAll('img[src$=".jpg"], img[src$=".jpeg"], img[src$=".png"');
+   images = document.querySelectorAll('img[src$=".jpg"], img[src$=".jpeg"], img[src$=".png"]');
+  images.forEach(image => {
+    if(image.naturalWidth >= minWidth
+       && image.naturalHeight >= minHeight)
+    {
+      var imageFound = document.createElement('img');
+      imageFound.src = image.src;
+      imagesFound.append(imageFound);
+    }
+  })
 
-    images.forEach(image => {
-        if(image.naturalWidth >= minWidth && image.naturalHeight >= minHeight){
-            var imageFound = document.createElement("img");
-            imageFound.src = image.src;
-            imagesFound.append(imageFound);
-
-        }
+  //select images
+ // select image event
+  imagesFound.querySelectorAll('img').forEach(image => {
+    image.addEventListener('click', function(event){
+      imageSelected = event.target;
+      bookmarklet.style.display = 'none';
+      window.open(siteUrl + 'images/create/?url='
+                  + encodeURIComponent(imageSelected.src)
+                  + '&title='
+                  + encodeURIComponent(document.title),
+                  '_blank');
     })
-
+  })
 }
+
 
 //Launch the bokmarklet
 bookmarkletLaunch();
