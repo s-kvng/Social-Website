@@ -7,4 +7,5 @@ app_name = 'images' #research
 
 urlpatterns = [
     path('create/', views.image_create, name='create'),
+    path('detail/<int:id>/<slug:slug>/', views.image_detail, name='detail'),
 ]
