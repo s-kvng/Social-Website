@@ -145,6 +145,12 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
 
+if DEBUG:
+ import mimetypes
+ mimetypes.add_type('application/javascript', '.js', True)
+ mimetypes.add_type('text/css', '.css', True)
+
+
 #Authentication settings
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend', # Authenticate users using username and password (default)
