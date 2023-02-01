@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d20a8887-c64b-4a0d-a2ab-af79f0082d64" name="Changes" comment="" />
+    <list default="true" id="d20a8887-c64b-4a0d-a2ab-af79f0082d64" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/bookmarks/images/templates/images/image/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bookmarks/images/templates/images/image/list_images.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookmarks/account/static/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/bookmarks/account/static/css/base.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookmarks/account/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/bookmarks/account/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookmarks/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/bookmarks/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookmarks/images/templates/images/image/details.html" beforeDir="false" afterPath="$PROJECT_DIR$/bookmarks/images/templates/images/image/details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookmarks/images/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookmarks/images/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookmarks/images/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookmarks/images/views.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,7 +39,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
     &quot;last_opened_file_path&quot;: &quot;N:/Projects( codes )/Social-Website&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
   <component name="RecentsManager">

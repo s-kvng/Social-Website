@@ -240,6 +240,10 @@ ul.messages li a.close {
 }
 a.like, a.follow { float:right; margin-top:-8px; }
 
+.like{
+    text-decoration: none;
+}
+
 #image-list { overflow:hidden; }
 #image-list .image {
     float:left;
