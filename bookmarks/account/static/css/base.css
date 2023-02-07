@@ -8,7 +8,7 @@ body {
 
 p {
     line-height: 1.8;
-    
+
 }
 
 a {
@@ -116,12 +116,12 @@ label {
     padding:6px 10px;
     font-size:14px;
     outline: none;
-} 
+}
 
 .form-control{
     width: 50% !important;
     box-shadow: none !important;
-    
+
 }
 
 input[type=submit], a.button {
@@ -273,7 +273,7 @@ a.like, a.follow { float:right; margin-top:-8px; }
 
 /* users */
 #people-list img {
-    width:180px;
+    width:150px;
     height:180px;
     border-radius:50%;
     margin-bottom:20px;
@@ -283,8 +283,15 @@ a.like, a.follow { float:right; margin-top:-8px; }
     float:left;
     overflow:auto;
     padding:10px;
+    margin-right: 50px;
 }
 #people-list .info { text-align:center; }
+
+.info .title{
+    text-decoration: none;
+    color: green;
+}
+
 img.user-detail {
     border-radius:50%;
     float:left;
