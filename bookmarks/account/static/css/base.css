@@ -238,9 +238,17 @@ ul.messages li a.close {
     padding:10px 20px;
     margin:20px 10px 0;
 }
-a.like, a.follow { float:right; margin-top:-8px; }
 
-.like{
+
+
+a.like {
+    float:right;
+    margin-top:-8px;
+    text-decoration: none;
+}
+
+a.follow{
+    float:right;
     text-decoration: none;
 }
 
