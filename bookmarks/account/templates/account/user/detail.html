@@ -28,6 +28,7 @@
         {% endif %}
         </a>
 
+        <!-- rendering user's bookmark images  -->
         <div id="image-list" class="image-container">
             {% include "images/image/list_images.html" with images=user.images_created.all %}
         </div>
@@ -38,50 +39,53 @@
 
 {% block domready %}
 
-    const url = {% url "user_follow" %};
+        const url = '{% url "user_follow" %}';
 
-    var options = {
-        method : "POST";
-        header: {X-CSRFToken: csrftoken};
-        mode : 'same-orgin';
-    }
+        var options = {
+            method : 'POST',
+            headers: {'X-CSRFToken': csrftoken},
+            mode : 'same-origin',
+        };
 
-    document.querySelector(a.follow).addEventListener("click", function(e){
-        e.preventDefault;
+        document.querySelector('a.follow').addEventListener("click", function(e){
+        e.preventDefault();
 
-        followButton = this;
+        var followButton = this;
+
 
         //Get body of http request
-        var formData = new FormData;
+        var formData = new FormData();
         formData.append('id', followButton.dataset.id);
-        formData.append('action', followButton.dataset.id);
+        formData.append('action', followButton.dataset.action);
         options['body'] = formData;
 
+
         //Fetch API
+        // send http request
         fetch(url, options)
         .then(response => response.json())
         .then(data => {
             if(data['status'] === 'ok'){
 
-            var previousAction = followButton.dataset.action
+                var previousAction = followButton.dataset.action
 
-            //toggle button text and dataset
-            action = previousAction === 'follow' ? 'unfollow' : 'follow';
-            followButton.dataset.action = action;
-            followButton.innerHTML = action;
+                //toggle button text and dataset
+                action = previousAction === 'follow' ? 'unfollow' : 'follow';
+                followButton.dataset.action = action;
+                followButton.innerHTML = action;
 
-            //fol = document.querySelector('a.follow');
-            //fol.innerHTML = action;
+                //fol = document.querySelector('a.follow');
+                //fol.innerHTML = action;
 
 
-            //update user follow count
-            totalCount = document.querySelector("span.count .total");
-            intTotalCount = parseInt(totalCount.innerHTML);
+                //update user follow count
+                totalCount = document.querySelector("span.count .total");
+                intTotalCount = parseInt(totalCount.innerHTML);
 
-            totalCount.innerHTML = previousAction === 'follow' ? intTotalCount + 1 : intTotalCount - 1;
+                totalCount.innerHTML = previousAction === 'follow' ? intTotalCount + 1 : intTotalCount - 1;
             }
-        }
+        })
 
-    })
+    });
 
 {% endblock %}

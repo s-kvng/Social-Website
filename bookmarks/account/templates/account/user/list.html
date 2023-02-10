@@ -9,7 +9,9 @@
  <div id="people-list">
     {% for user in users %}
 
-    {% if user.get_full_name %}
+    {% if user.get_full_name and user.get_full_name != request.user.get_full_name %}
+
+
 
      <div class="user">
         <a href="{{ user.get_absolute_url }}">

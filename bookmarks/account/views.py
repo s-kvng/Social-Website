@@ -131,9 +131,9 @@ def user_follow(request):
             return JsonResponse({'status' : 'ok'})
 
         except:
-            return JsonResponse({"status": "error"})
+            return JsonResponse({'status': 'error'})
 
-    return JsonResponse({'status':'ok'})
+    return JsonResponse({'status':'error'})
 
 
 
