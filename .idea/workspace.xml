@@ -3,12 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d20a8887-c64b-4a0d-a2ab-af79f0082d64" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookmarks/account/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookmarks/account/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookmarks/account/templates/account/user/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/bookmarks/account/templates/account/user/detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookmarks/account/templates/account/user/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/bookmarks/account/templates/account/user/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookmarks/account/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookmarks/account/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookmarks/account/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookmarks/account/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookmarks/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/bookmarks/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,15 +25,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;N:/Projects( codes )/Social-Website&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "last_opened_file_path": "N:/Projects( codes )/Testing-forms/testing",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\kvngn\Desktop\Social-Website\bookmark\Lib\site-packages\OpenSSL" />
