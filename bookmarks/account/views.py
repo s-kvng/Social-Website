@@ -9,7 +9,8 @@ from django.shortcuts import get_object_or_404
 from django.contrib.auth.models import User
 from django.views.decorators.http import require_POST
 from .models import Contact
-
+from ..actions.utils import create_action
+from ..actions.models import Action
 
 
 # Create your views here.
@@ -41,7 +42,16 @@ def user_login(request): # Our own custom view
 
 @login_required
 def dashboard(request):
-    return render(request, 'account/dashboard.html', {'section': 'dashboard'})
+
+    #
+    actions = Action.objects.exclude(user=request.user)
+    following_ids = request.user.following.values_list('id', flat=True)
+
+    #
+    following_actions = actions.filter(user_id__in=following_ids)
+    following_actions = following_actions.select_related('user', 'user__profile').prefetch_related('target')[:10]
+
+    return render(request, 'account/dashboard.html', {'section': 'dashboard' , 'following_actions':following_actions })
 
 
 #custom registeration view 
@@ -63,6 +73,9 @@ def register(request):
             
             #create user profile
             Profile.objects.create(user = new_user)
+
+            #
+            create_action(new_user, " has created an account")
             
             return render(request, 'account/register_done.html', {'new_user': new_user})
             
@@ -124,6 +137,9 @@ def user_follow(request):
 
             if action == 'follow':
                 Contact.objects.get_or_create(user_from = request.user, user_to = user)
+
+                #
+                create_action(request.user, "is following" , user)
             else:
                 Contact.objects.filter(user_from = request.user, user_to= user).delete
 

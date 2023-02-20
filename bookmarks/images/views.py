@@ -8,6 +8,8 @@ from django.views.decorators.http import require_POST
 from django.core.paginator import Paginator, EmptyPage , PageNotAnInteger
 from django.http import HttpResponse
 
+from ..actions.utils import create_action
+
 
 # Create your views here.
 
@@ -25,6 +27,9 @@ def image_create(request):
             #assign current user to the item(image)
             new_image.user = request.user
             new_image.save()
+
+            #Stream activity
+            create_action(request.user, 'bookmarked Image', new_image)
             
 
             messages.success(request,'Image added successfully')
@@ -59,6 +64,7 @@ def image_like(request):
 
             if action == 'like':
                 imageObj.users_like.add(request.user)
+                create_action(request.user, "Likes", imageObj)
             else:
                 imageObj.users_like.remove(request.user)
 
