@@ -44,9 +44,11 @@ INSTALLED_APPS = [
     'django_extensions',
     'easy_thumbnails',
     'actions.apps.ActionsConfig',
+    'debug_toolbar',
 ]
 
 MIDDLEWARE = [
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -149,9 +151,9 @@ EMAIL_USE_TLS = True
 
 
 if DEBUG:
- import mimetypes
- mimetypes.add_type('application/javascript', '.js', True)
- mimetypes.add_type('text/css', '.css', True)
+    import mimetypes
+    mimetypes.add_type('application/javascript', '.js', True)
+    mimetypes.add_type('text/css', '.css', True)
 
 
 #Authentication settings
@@ -163,4 +165,14 @@ AUTHENTICATION_BACKENDS = [
 #
 ABSOLUTE_URL_OVERRIDES = {
     'auth.user': lambda u: reverse_lazy('user_detail', args=[u.username])
+}
+
+Internal_IPS = [
+    '127.0.0.1',
+]
+
+def show_toolbar(request):
+    return True
+DEBUG_TOOLBAR_CONFIG = {
+    "SHOW_TOOLBAR_CALLBACK" : show_toolbar,
 }
