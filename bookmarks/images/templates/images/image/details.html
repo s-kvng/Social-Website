@@ -49,6 +49,10 @@
         Nobody has liked this pic yet
         {% endfor %}
 
+        {% with totals=imageObj.total_likes %}
+            <div>{{ totals }}</div>
+        {% endwith %}
+
 
 
     </div>
