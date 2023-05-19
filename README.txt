@@ -1,5 +1,5 @@
 create enviroment - python -m venv bookmark
-activate env - source bookmark/bin/activate
+activate env - source bookmark/bin/activate(Linux based system)
 install dependencies - pip install -r requirements.txt
 
 git remote set-url origin git@github.com:s-kvng/project-management-board.git

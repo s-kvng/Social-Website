@@ -6,3 +6,4 @@ werkzeug==2.2.2
 pyOpenSSL
 easy-thumbnails
 django-debug-toolbar==3.6.0
+redis==4.3.4
