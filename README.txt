@@ -1,0 +1,8 @@
+create enviroment - python -m venv bookmark
+activate env - source bookmark/bin/activate(Linux based system)
+install dependencies - pip install -r requirements.txt
+
+git remote set-url origin git@github.com:s-kvng/project-management-board.git
+
+git+https://github.com/python-social-auth/social-app-django.git@20fabcd7bd9a8a41910bc5c8ed1bd6ef2263b328
+git+https://github.com/django-extensions/django-extensions.git@25a41d8a3ecb24c009c5f4cac6010a091a3c91c8
