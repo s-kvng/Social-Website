@@ -17,7 +17,10 @@
 >The following are some of the authentication features: Django registration, login, logout, password update, and password reset views templates creation, adding a unique profile model to the user model, constructing a unique authentication backend.
 
 - Bookmarking Images
+>I created a JavaScript bookmarklet that allows a user to save an online image by configuring the project for media file uploads and utilizing JavaScript with Django. Something comparable to, but less potent than, what Pinterest employs.
+
 - Live analytics
+>Creating a mechanism for likes and follows, constructing an application for activity streams. making use of signals to denormalize counts. Redis is used to keep track of image views and to rank the most popular images.
 
 ## Getting Started
 
