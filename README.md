@@ -32,7 +32,7 @@ clone the repo or download from https://github.com/s-kvng/Social-Website.git
 
 ### Install dependencies
 
-`pip install requirements`
+`pip install requirements.txt`
 
 ### Access Admin Dashboard
 run the followning command
